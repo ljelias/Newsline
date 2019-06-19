@@ -1,0 +1,38 @@
+    <header>
+        <div class="headercontainer">
+            <div class="namebox">
+                <a href="index.handlebars">
+                    <h1>Newsline...</h1>
+                </a>
+            </div>
+            <nav>
+                <button class="topnav" id="get1">Get New Articles</button>
+                <button class="btn topnav" id="clear1">Clear All Articles</button>
+                <a href="saved.handlebars"><button class="topnav">>> SAVED ARTICLES</button></a>
+            </nav>
+        </div>
+    </header>
+
+    <div id="container1a" class="w3-card">
+            <h2>...recent news from Minnesota Public Radio</h2>
+    </div>
+
+
+    <div id="container2a">
+        {{#each article}}
+            <div data-_id={{this._id}} class="w3-card articlebox">
+                <h3>
+                    <a class="article-link" target="blank" rel="noopener noreferrer" href={{this.link}}>{{this.title}}</a>
+                    <button class="w3-btn w3-small w3-pale-red">Remove</button>
+                </h3>
+                <p>{{this.brief}}<button class="w3-btn w3-small w3-light-blue">Save This</button></p>
+            </div>
+        {{/each}}
+    </div>
+
+
+    <footer>
+        <span>&copy; 2019 L. Elias</span>
+    </footer>
+
+    <script src="/assets/index.js"></script>
